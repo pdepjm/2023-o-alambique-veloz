@@ -16,6 +16,8 @@ object buenosAires{
 
 object bagdad{
 	var property recuerdo = "bidon con petroleo crudo"
+	
+	method puedeViajarCon(vehiculo) = true //no tiene restricciones
 }
 
 object lasVegas{
