@@ -1,7 +1,9 @@
+import vehiculos.*
+
 object luke{
 	var cantidadLugaresVisitados = 0
 	var ultimoRecuerdo = ""
-	var vehiculo = ""
+	var vehiculo = alambiqueVeloz 
 	
 	method cantidadLugaresVisitados() = cantidadLugaresVisitados
 
@@ -16,5 +18,6 @@ object luke{
 	method realmenteViajarA(destino){
 		cantidadLugaresVisitados +=1
 		ultimoRecuerdo = destino.recuerdo()
+		vehiculo.viajar()
 	}
 }
