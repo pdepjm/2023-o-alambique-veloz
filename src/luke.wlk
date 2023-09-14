@@ -10,13 +10,14 @@ object luke{
 	method ultimoRecuerdo() = ultimoRecuerdo
 
 	method viajarA(destino){
-		if(destino.puedeViajarCon(vehiculo)){
+		if(destino.puedeViajarCon(vehiculo))
 			self.realmenteViajarA(destino)
-		}
 	}
-	
+	method vehiculo(nuevo){
+		vehiculo = nuevo
+	}
 	method realmenteViajarA(destino){
-		cantidadLugaresVisitados +=1
+		cantidadLugaresVisitados = cantidadLugaresVisitados + 1
 		ultimoRecuerdo = destino.recuerdo()
 		vehiculo.viajar()
 	}

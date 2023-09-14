@@ -1,9 +1,12 @@
 object alambiqueVeloz {
 	var combustible = 100
+	const capacidadTanque = 100
 	
-	method tieneTanqueLleno() = combustible == 500
+	method tieneTanqueLleno() = combustible == capacidadTanque
 	
-	method esRapido() = true
+	method puedeDesplazarse() = self.tieneTanqueLleno()
+	
+	method esRapido() = combustible > capacidadTanque/2
 	
 	method viajar(){
 		combustible -= 10
@@ -11,10 +14,14 @@ object alambiqueVeloz {
 	
 }
 
-object espantoMovil{ //es rapido si tiene menos de 2 ruedas pinchadas
+object espantoMovil{ 
 	var ruedasPinchadas = 0
 	
-	method esRapido() = ruedasPinchadas < 2
+	method esRapido() = false
 	
-	method viajar(){}
+	method puedeDesplazarse() = ruedasPinchadas < 4
+	
+	method viajar(){
+		ruedasPinchadas = ruedasPinchadas + 1
+	}
 }

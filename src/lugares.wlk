@@ -3,7 +3,7 @@ import vehiculos.*
 object paris{
 	method recuerdo() = "llavero"
 	
-	method puedeViajarCon(vehiculo) = vehiculo == alambiqueVeloz && alambiqueVeloz.tieneTanqueLleno() || vehiculo != alambiqueVeloz
+	method puedeViajarCon(vehiculo) = vehiculo.puedeDesplazarse() 
 }
 
 object buenosAires{
@@ -12,6 +12,10 @@ object buenosAires{
 	method recuerdo() = "mate" + if(presidente == "Pepita") " con yerba" else ""
 	
 	method puedeViajarCon(vehiculo) = vehiculo.esRapido()
+	
+	method presidente(nuevo){
+		presidente = nuevo
+	}
 }
 
 object bagdad{
@@ -23,6 +27,9 @@ object bagdad{
 object lasVegas{
 	var homenajeado = buenosAires
 	
+	method homenajeado(nuevo){
+		homenajeado = nuevo
+	}
 	method recuerdo() = homenajeado.recuerdo()
 	
 	method puedeViajarCon(vehiculo) = homenajeado.puedeViajarCon(vehiculo)
